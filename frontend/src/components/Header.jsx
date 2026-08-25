@@ -113,7 +113,7 @@ function Header(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data);loggingFunction(response.data.user)});
+            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{loggingFunction(response.data.user)});
             setLoading(false);
             complete();
             setAccount(false);
