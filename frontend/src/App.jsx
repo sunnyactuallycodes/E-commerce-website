@@ -7,10 +7,9 @@ import ProductsDetails from "./pages/ProductsDetail";
 import Google from "./pages/Google";
 import CartPage from "./pages/CartPage";
 import { LoadingBarContainer } from "react-top-loading-bar";
-import RegisterContextProvider from "./context/RegisterContextProvider";
+
 import Payment from "./pages/Payment";
 import PriceContextProvider from "./context/PriceContextProvider";
-import LocationContext from "./context/LocationContext";
 import LocationContextProvider from "./context/LocationContextProvider";
 import Order from "./pages/Orders";
 import AuthContextProvider from "./context/AuthContextProvider";
@@ -55,7 +54,7 @@ function App(){
         
          <LoadingBarContainer>
           <AuthContextProvider>
-          <RegisterContextProvider>
+         
             <PriceContextProvider>
               <LocationContextProvider>
                 <SearchContextProvider>
@@ -65,7 +64,7 @@ function App(){
        </SearchContextProvider>
        </LocationContextProvider>
        </PriceContextProvider>
-       </RegisterContextProvider>
+       
        </AuthContextProvider>
        </LoadingBarContainer>
 
