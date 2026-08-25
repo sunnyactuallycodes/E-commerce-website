@@ -7,7 +7,7 @@ import axios from 'axios';
 import Skeleton from 'react-loading-skeleton';
 import { useLoadingBar } from "react-top-loading-bar";
 import ReactLoading from 'react-loading';
-import RegisterContext from '../context/RegisterContext';
+
 import AuthContext from '../context/AuthContext';
 import Loading from '../utils/LoadingBar';
 import SearchContext from '../context/SearchContext';
@@ -28,7 +28,7 @@ function Header(){
     
 
 
-    const {user,login, setUser, logout} = useContext(RegisterContext);
+   
     const {loggedUser, loggingFunction,logoutFunction, loadingLog}= useContext(AuthContext);
     
 
@@ -113,7 +113,7 @@ function Header(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); login(response.data); loggingFunction(response.data.user)});
+            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data);loggingFunction(response.data.user)});
             setLoading(false);
             complete();
             setAccount(false);
