@@ -190,7 +190,7 @@ const handlePayment = async (e) => {
     // `options` (plural, undefined) into `new window.Razorpay(...)`.
     // This was throwing a ReferenceError on every call.
     const options = {
-      key: import.meta.env.VITE_kEY_ID,
+      key: import.meta.env.VITE_KEY_ID,
       amount: rzpOrder.amount,
       currency: rzpOrder.currency,
       name: "Ajay Shop",
