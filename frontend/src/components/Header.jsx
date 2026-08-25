@@ -9,7 +9,7 @@ import { useLoadingBar } from "react-top-loading-bar";
 import ReactLoading from 'react-loading';
 import RegisterContext from '../context/registerContext';
 import AuthContext from '../context/AuthContext';
-import Loading from '../utils/loading';
+import Loading from '../utils/LoadingBar';
 import SearchContext from '../context/SearchContext';
 
 

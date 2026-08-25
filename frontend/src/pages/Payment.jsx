@@ -8,12 +8,12 @@ import { useGeolocated } from "react-geolocated";
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import { circle, Draggable } from "leaflet";
 import LocationPicker from "../utils/LocationPicker";
-import Loading from "../utils/loading";
 import RegisterContext from "../context/registerContext";
 import PriceContext from "../context/PriceContext";
 import LocationContext from '../context/LocationContext.js';
 import { useMediaQuery } from "react-responsive";
 import SearchContext from "../context/SearchContext.js";
+import LoadingBar from "../utils/LoadingBar.jsx";
 
 
 
@@ -254,7 +254,7 @@ const handlePayment = async (e) => {
         <>
         <ToastContainer/>
         {
-          loading && <Loading/>
+          loading && <LoadingBar/>
         }
         
         

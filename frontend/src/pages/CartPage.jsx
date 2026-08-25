@@ -4,7 +4,7 @@ import { Minus, Plus } from "lucide-react";
 import {ToastContainer, toast} from 'react-toastify';
 import { useContext, useState } from "react";
 import axios from 'axios';
-import Loading from "../utils/loading.jsx";
+import LoadingBar from "../utils/LoadingBar.jsx";
 import { useEffect } from "react";
 import LocationPicker from "../utils/LocationPicker.jsx";
 import { useGeolocated } from "react-geolocated";
@@ -166,7 +166,7 @@ function CartPage(){
 
 
         {
-            loading && <Loading/>
+            loading && <LoadingBar/>
         }
         <ToastContainer/>
             <div style={{

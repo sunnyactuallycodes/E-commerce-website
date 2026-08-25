@@ -3,7 +3,7 @@ import ImageDropInput from '../components/ImageDropInput.jsx';
 import { useState } from "react";
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
-import Loading from "../utils/loading.jsx";
+import LoadingBar from "../utils/LoadingBar.jsx";
 import DynamicInputList from "../utils/DynamicInputList.jsx";
 import {useMediaQuery} from 'react-responsive';
 import { useLocation } from "react-router-dom";
@@ -56,7 +56,7 @@ function AdminProducts(){
         <>
         <ToastContainer/>
         {
-            loading && <Loading/>
+            loading && <LoadingBar/>
         }
          <div style={{
             padding:"3rem"

@@ -4,12 +4,12 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import RegisterContext from '../context/registerContext';
-import Loading from '../utils/loading';
+import RegisterContext from '../context/RegisterContext';
 import { useLoadingBar } from 'react-top-loading-bar';
 import { X } from 'lucide-react';
 import SearchContext from '../context/SearchContext';
 import AuthContext from '../context/AuthContext';
+import LoadingBar from '../utils/LoadingBar';
 
 function ProductsDetails(){
     // context to check whether the user is there or not
@@ -389,7 +389,7 @@ function ProductsDetails(){
         }
 
         {
-            loading && <Loading/>
+            loading && <LoadingBar/>
         }
         <div style={{
             paddingLeft:'3rem',

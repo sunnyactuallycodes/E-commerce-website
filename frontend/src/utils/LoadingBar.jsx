@@ -1,4 +1,4 @@
-const Loading = () => {
+const LoadingBar = () => {
   return (
     <div className="fixed inset-0 bg-white/95 flex items-center justify-center z-50">
       <div className="flex flex-col items-center gap-4">
@@ -18,4 +18,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingBar;

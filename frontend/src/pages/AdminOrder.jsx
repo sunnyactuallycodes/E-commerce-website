@@ -2,7 +2,7 @@ import axios from "axios";
 import { ArrowLeft, ChevronDown, ChevronUp, ImageIcon, Package, Plus, Search, ShoppingBag, TrendingUp, Users, Verified, MapPin, Phone, Truck, CreditCard, } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import Loading from "../utils/loading";
+import LoadingBar from "../utils/LoadingBar";
 import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
 
@@ -62,7 +62,7 @@ function AdminOrder(){
     return(
         <>
         {
-            loading && <Loading/>
+            loading && <LoadingBar/>
         }
        
           <div style={{

@@ -5,7 +5,7 @@ import { useCallback, useContext, useEffect, useEffectEvent, useMemo, useState }
 import {ToastContainer} from 'react-toastify';
 import {toast} from 'react-toastify';
 import axios from 'axios';
-import Loading from "../utils/loading";
+import LoadingBar from "../utils/LoadingBar";
 import SearchContext from "../context/SearchContext";
 import ProductContext from "../context/ProductContext";
 
@@ -137,7 +137,7 @@ function ProductShop(){
         
 
         {
-            loading && <Loading/>
+            loading && <LoadingBar/>
         }
 
 

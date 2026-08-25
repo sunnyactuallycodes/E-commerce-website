@@ -3,7 +3,7 @@ import { ArrowRight, ChevronDown, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
-import Loading from "../utils/loading";
+import Loading from "../utils/LoadingBar";
 import { useEffect } from "react";
 
 
