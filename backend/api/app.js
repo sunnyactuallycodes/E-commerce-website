@@ -64,7 +64,28 @@ app.use('/api/v1',paymentRouter);// routes for payment handling only through raz
 
 
 
-await connectDB();
+
+
+let isConnected = false;
+
+const connectDB = async () => {
+  if (isConnected) return;
+  try {
+    const db = await mongoose.connect("mongodb+srv://brajalbelaadmin_db_user:braj@clusterbrajalbela.chtnrfj.mongodb.net/?appName=clusterBrajAlbela");
+    isConnected = db.connections[0].readyState;
+    console.log("MongoDB Connected");
+  } catch (error) {
+    console.error("Database connection error:", error);
+  }
+};
+
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
+
+
+app.set('trust proxy', 1);
 
 
 app.get('/confirmation', (request, response)=>{
