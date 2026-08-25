@@ -52,7 +52,7 @@ function ProductsDetails(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/signup", {name, phoneNumber, password},{withCredentials:true});
+            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/signup", {name, phoneNumber, password},{withCredentials:true});
             const response = await backendRes.data;
             setMessages(response);
             setLoading(false);
@@ -72,7 +72,7 @@ function ProductsDetails(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); loggingFunction(response.data.user)});
+            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); loggingFunction(response.data.user)});
             setLoading(false);
             complete();
             setAccount(false);
@@ -89,7 +89,7 @@ function ProductsDetails(){
     const fetchingProductsFromBackend = async()=>{
         try {
             setLoading(true);
-            const backendResponse = await axios.get("http://localhost:4000/api/v1/fetchAllProducts", {withCredentials:true});
+            const backendResponse = await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/fetchAllProducts", {withCredentials:true});
             const response = await backendResponse.data;
             setProducts_all(response);
             setLoading(false);
@@ -106,7 +106,7 @@ function ProductsDetails(){
         e.preventDefault();
         try {
             setLoading(true);
-            const backendResponse= await axios.post(`http://localhost:4000/api/v1/post/cart/${productId}`,{quantity,productSize},{withCredentials:true});
+            const backendResponse= await axios.post(`https://e-commerce-website-lac-eight.vercel.app/api/v1/post/cart/${productId}`,{quantity,productSize},{withCredentials:true});
             const response =await backendResponse.data;
             setCartMessage(response);
             setLoading(false);
@@ -120,7 +120,7 @@ function ProductsDetails(){
     const addingProductToFavourites = async(productId)=>{
         try {
             setLoading(true);
-            const backendRes = await axios.get(`http://localhost:4000/api/v1/favourite/${productId}`, {withCredentials:true});
+            const backendRes = await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/favourite/${productId}`, {withCredentials:true});
             const response= await backendRes.data;
             setResponseFromBackend(response);
             console.log(response);
@@ -158,7 +158,7 @@ function ProductsDetails(){
     const fetchOneProductFromData= async()=>{
         try {
             setLoading(true);
-            const backendResponse =await axios.get(`http://localhost:4000/api/v1/fetchOneProducts/${productId}`,{withCredentials:true});
+            const backendResponse =await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/fetchOneProducts/${productId}`,{withCredentials:true});
             const response = await backendResponse.data;
             setOneProductOnly(response);
             setLoading(false);

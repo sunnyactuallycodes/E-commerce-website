@@ -14,7 +14,7 @@ function AdminUsers(){
     const fetchingUserFromBackend = async()=>{
         try {
             setLoading(true);
-            const backendRes = await axios.get('http://localhost:4000/api/v1/users/fetchAllUsers/admin').then((response)=>setUsers(response.data));
+            const backendRes = await axios.get('https://e-commerce-website-lac-eight.vercel.app/api/v1/users/fetchAllUsers/admin').then((response)=>setUsers(response.data));
             
             setLoading(false);
             return toast.success("Users fetched");

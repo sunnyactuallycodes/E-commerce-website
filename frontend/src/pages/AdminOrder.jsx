@@ -29,7 +29,7 @@ function AdminOrder(){
    const changingDeliveryDate= async(id)=>{
       try { 
         setLoading(true);
-        const backendRes= await axios.post(`http://localhost:4000/api/v1/cart/update/date/admin/${id}`,{date} ,{withCredentials:true});
+        const backendRes= await axios.post(`https://e-commerce-website-lac-eight.vercel.app/api/v1/cart/update/date/admin/${id}`,{date} ,{withCredentials:true});
         console.log(backendRes.data);
         setLoading(false);
         return toast.success("date updated successfully");
@@ -43,7 +43,7 @@ function AdminOrder(){
     const fetchingOrdersFromBackend= async()=>{
         try {
             setLoading(true)
-            const backendRes= await axios.get("http://localhost:4000/api/v1/cart/fetchOrders/admin",{withCredentials:true}).then((response)=>{
+            const backendRes= await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/cart/fetchOrders/admin",{withCredentials:true}).then((response)=>{
                 setOrders(response.data)
             });
             setLoading(false)

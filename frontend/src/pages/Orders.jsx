@@ -26,7 +26,7 @@ function Order(){
     // fetching the orders of the user from his request session. 
     const fetchingTheOrdersList = async()=>{
         try {
-            const backendRes = await axios.get("http://localhost:4000/api/v1/cart/getAllOrders", {withCredentials:true}).then((response)=>setOrders(response.data));
+            const backendRes = await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/cart/getAllOrders", {withCredentials:true}).then((response)=>setOrders(response.data));
             console.log("everything is working fine till here");
             toast.success("Order fetched");
 

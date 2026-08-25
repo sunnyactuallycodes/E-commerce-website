@@ -18,7 +18,7 @@ function FeaturedBanner(){
      const fetchingProductsFromBackend = async()=>{
         try {
             setLoading(true);
-            const backendResponse = await axios.get("http://localhost:4000/api/v1/fetchAllProducts", {withCredentials:true});
+            const backendResponse = await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/fetchAllProducts", {withCredentials:true});
             const response = await backendResponse.data;
             setProducts_all(response);
             setLoading(false);

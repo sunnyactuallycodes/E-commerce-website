@@ -25,7 +25,7 @@ function Payment(){
   const uploadingLocationToBackend = async()=>{
         try {
             setLoading(true);
-            const backendRes= await axios.get(`http://localhost:4000/api/v1/shippingCharges/${location.latitude}/${location.longitude}`,{withCredentials:true});
+            const backendRes= await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/shippingCharges/${location.latitude}/${location.longitude}`,{withCredentials:true});
             const response = await backendRes.data;
             setShippingCharges(response);
             setLoading(false);
@@ -77,7 +77,7 @@ function Payment(){
     const fetchingProductsFromCart = async()=>{
         try {
             setLoading(true);
-            const backendRes = await axios.get("http://localhost:4000/api/v1/get/cart/products",{withCredentials:true});
+            const backendRes = await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/get/cart/products",{withCredentials:true});
             const response = await backendRes.data;
             setCart(response);
             setLoading(false);
@@ -117,7 +117,7 @@ const handlePaymentViaCashOnDelivery = async (e) => {
   try {
     setOrderStep("Creating Your Booking");
     const orderResponse = await axios.post(
-      `http://localhost:4000/api/v1/payment/cashOnDelivery/${location.latitude}/${location.longitude}`,
+      `https://e-commerce-website-lac-eight.vercel.app/api/v1/payment/cashOnDelivery/${location.latitude}/${location.longitude}`,
       { firstName, lastName, email, city, address,address1, phoneNumber, state, pincode }, {withCredentials:true}
     );
     const orderData = orderResponse.data;
@@ -155,7 +155,7 @@ const handlePayment = async (e) => {
   try {
     setOrderStep("Creating Your Booking");
     const orderResponse = await axios.post(
-      `http://localhost:4000/api/v1/cart/processingOrder/${location.latitude}/${location.longitude}`,
+      `https://e-commerce-website-lac-eight.vercel.app/api/v1/cart/processingOrder/${location.latitude}/${location.longitude}`,
       { firstName, lastName, email, city, address,address1, phoneNumber, state, pincode }, {withCredentials:true}
     );
     const orderData = orderResponse.data;
@@ -167,7 +167,7 @@ const handlePayment = async (e) => {
     console.log("Your order data is loaded: ",orderData);
     setOrderStep("Setting up payment gateway");
     const rzpOrderRes = await axios.post(
-      "http://localhost:4000/api/v1/createOrder/rzpgateway",
+      "https://e-commerce-website-lac-eight.vercel.app/api/v1/createOrder/rzpgateway",
       { price: shippingCharges.price },
       {withCredentials:true}
     );
@@ -194,7 +194,7 @@ const handlePayment = async (e) => {
         setOrderStep("Verifying Payment...");
         try {
           const verifyRes = await axios.post(
-            "http://localhost:4000/api/v1/verifyPayment/rzpgateway",
+            "https://e-commerce-website-lac-eight.vercel.app/api/v1/verifyPayment/rzpgateway",
             {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,

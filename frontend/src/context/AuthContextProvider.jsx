@@ -9,7 +9,7 @@ const AuthContextProvider= ({children})=>{
     const checkingMe = async ()=>{
         try {
             setLoadingLog(true);
-            await axios.get("http://localhost:4000/api/v1/user/login",{withCredentials:true}).then((response)=>setLoggedUser(response.data));
+            await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/user/login",{withCredentials:true}).then((response)=>setLoggedUser(response.data));
             setLoadingLog(false);
         } catch (error) {
             console.error("An error occured while loading the data");

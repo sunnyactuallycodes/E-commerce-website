@@ -65,7 +65,7 @@ function CartPage(){
     const fetchingProductsFromCart = async()=>{
         try {
             setLoading(true);
-            const backendRes = await axios.get("http://localhost:4000/api/v1/get/cart/products",{withCredentials:true});
+            const backendRes = await axios.get("https://e-commerce-website-lac-eight.vercel.app/api/v1/get/cart/products",{withCredentials:true});
             const response = await backendRes.data;
             setCart(response);
             setLoading(false);
@@ -84,7 +84,7 @@ function CartPage(){
                 latitude:selectedLat,
                 longitude:selectedLng
             });
-            const backendRes= await axios.get(`http://localhost:4000/api/v1/shippingCharges/${selectedLat}/${selectedLng}`,{withCredentials:true});
+            const backendRes= await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/shippingCharges/${selectedLat}/${selectedLng}`,{withCredentials:true});
             const response = await backendRes.data;
             setShippingCharges(response);
             adjustprice(response);
@@ -100,7 +100,7 @@ function CartPage(){
     try {
         if(location.latitude && location.longitude){
             setLoading(true);
-            const backendRes= await axios.get(`http://localhost:4000/api/v1/shippingCharges/${location.latitude}/${location.longitude}`,{withCredentials:true});
+            const backendRes= await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/shippingCharges/${location.latitude}/${location.longitude}`,{withCredentials:true});
             const response = await backendRes.data;
             setShippingCharges(response);
             adjustprice(response);
@@ -115,7 +115,7 @@ function CartPage(){
 
    const deletingItemsFromCart= async (productId)=>{
     try {
-        const backendRes= await axios.get(`http://localhost:4000/api/v1/delete/cart/${productId}`,{withCredentials:true});
+        const backendRes= await axios.get(`https://e-commerce-website-lac-eight.vercel.app/api/v1/delete/cart/${productId}`,{withCredentials:true});
         const response = await backendRes.data;
         console.log(response);
         console.log("completed task");

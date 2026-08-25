@@ -77,7 +77,7 @@ function Header(){
     // for user logout 
     const loggingOutUser = async()=>{
         try {
-            const backendRes = await axios.get('http://localhost:4000/api/v1/logout', {withCredentials:true}).then(()=>logoutFunction());
+            const backendRes = await axios.get('https://e-commerce-website-lac-eight.vercel.app/api/v1/logout', {withCredentials:true}).then(()=>logoutFunction());
             toast.success("Logged out"); 
             window.location.reload();
 
@@ -93,7 +93,7 @@ function Header(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/signup", {name, phoneNumber, password},{withCredentials:true});
+            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/signup", {name, phoneNumber, password},{withCredentials:true});
             const response = await backendRes.data;
             setMessages(response);
             setLoading(false);
@@ -113,7 +113,7 @@ function Header(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data);loggingFunction(response.data.user)});
+            const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data);loggingFunction(response.data.user)});
             setLoading(false);
             complete();
             setAccount(false);

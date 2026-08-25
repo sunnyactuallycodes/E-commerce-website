@@ -41,7 +41,7 @@ function AdminProducts(){
             });
             formData.append("productSize", productSize);
             formData.append("productDetails",productDetails);
-            const backendRes = await axios.post("http://localhost:4000/api/v1/postProduct", formData);
+            const backendRes = await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/postProduct", formData);
             await backendRes.data;
             console.log(backendRes.data);
             setLoading(false);
