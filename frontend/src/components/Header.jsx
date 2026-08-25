@@ -9,7 +9,7 @@ import { useLoadingBar } from "react-top-loading-bar";
 import ReactLoading from 'react-loading';
 
 import AuthContext from '../context/AuthContext';
-import Loading from '../utils/LoadingBar';
+import LoadingBar from '../utils/LoadingBar';
 import SearchContext from '../context/SearchContext';
 
 
@@ -118,7 +118,6 @@ function Header(){
             complete();
             setAccount(false);
             window.location.reload();
-           
         } catch (error) {
             console.error("An internal server error occured: ", error);
             complete();
