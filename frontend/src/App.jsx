@@ -18,7 +18,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminProducts from "./pages/AdminProducts";
 import AdminOrder from "./pages/AdminOrder";
 import AdminUsers from "./pages/AdminUsers";
-import AdminLayout from "./pages/adminLayout";
+import AdminLayout from "./pages/AdminLayout";
 
 import SearchContextProvider from "./context/SearchContextProvider";
 import ProductContextProvider from "./context/ProductContextProvider";
