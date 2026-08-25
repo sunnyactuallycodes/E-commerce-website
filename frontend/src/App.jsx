@@ -53,19 +53,21 @@ function App(){
     <>
         
          <LoadingBarContainer>
-          <AuthContextProvider>
+         
          
             <PriceContextProvider>
               <LocationContextProvider>
                 <SearchContextProvider>
                   <ProductContextProvider>
+                     <AuthContextProvider>
        <RouterProvider router={router}/>
+       </AuthContextProvider>
        </ProductContextProvider>
        </SearchContextProvider>
        </LocationContextProvider>
        </PriceContextProvider>
        
-       </AuthContextProvider>
+       
        </LoadingBarContainer>
 
     </>
