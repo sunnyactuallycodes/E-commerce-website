@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Modern Color Palette -->
+    <linearGradient id="primaryGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2D3748" /> <!-- Deep Slate -->
+      <stop offset="100%" stop-color="#4C51BF" /> <!-- Royal Indigo -->
+    </linearGradient>
+
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" /> <!-- Amber -->
+      <stop offset="100%" stop-color="#F97316" /> <!-- Orange -->
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#2D3748" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Optional background for preview (Transparent friendly) -->
+  <rect width="100%" height="100%" fill="#FFFFFF" rx="16" />
+
+  <g transform="translate(0, -10)">
+    <!-- ICON GRAPHIC: The Integrated Shopping Bag -->
+    <g filter="url(#softShadow)" transform="translate(325, 60)">
+      <!-- Bag Body / The 'A' Outer Line -->
+      <path d="M40 30 L110 30 C130 30 140 40 140 60 L140 140 C140 160 130 170 110 170 L40 170 C20 170 10 160 10 140 L10 60 C10 40 20 30 40 30 Z" 
+            fill="#FFFFFF" 
+            stroke="url(#primaryGradient)" 
+            stroke-width="12" 
+            stroke-linecap="round"/>
+      
+      <!-- Bag Handle (Arcing above) -->
+      <path d="M55 30 C55 0, 95 0, 95 30" 
+            fill="none" 
+            stroke="url(#accentGradient)" 
+            stroke-width="10" 
+            stroke-linecap="round"/>
+
+      <!-- Integrated 'A' Crossbar / Inner Ribbon (Clothing feel) -->
+      <path d="M25 110 C45 95 105 125 125 110 C125 130 105 140 25 110 Z" 
+            fill="url(#primaryGradient)" 
+            opacity="0.9"/>
+            
+      <!-- Dynamic Flow Line (Shoe feel) -->
+       <path d="M10 60 C30 45, 120 75, 140 60" 
+            fill="none" 
+            stroke="url(#accentGradient)" 
+            stroke-width="4" 
+            stroke-dasharray="8 8"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- BRAND TEXT -->
+    <!-- Main Title: AJAY -->
+    <text x="400" y="295" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="44" 
+          font-weight="900" 
+          letter-spacing="14" 
+          fill="#1A202C" 
+          text-anchor="middle">
+      AJAY
+    </text>
+
+    <!-- Subtitle: SHOES & CLOTHING -->
+    <text x="400" y="335" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="16" 
+          font-weight="600" 
+          letter-spacing="10" 
+          fill="#4A5568" 
+          text-anchor="middle">
+      SHOES &amp; CLOTHING
+    </text>
+
+    <!-- Accent Lines -->
+    <g transform="translate(250, 360)">
+      <line x1="0" y1="0" x2="110" y2="0" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" />
+      <path d="M135 -5 L145 5 M145 -5 L135 5" stroke="url(#accentGradient)" stroke-width="3" stroke-linecap="round"/> <!-- Small 'x' detail -->
+      <line x1="170" y1="0" x2="280" y2="0" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

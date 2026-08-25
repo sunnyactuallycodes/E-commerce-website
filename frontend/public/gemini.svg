@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%">
+  <defs>
+    <!-- Modern Color Palette -->
+    <linearGradient id="primaryGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A" /> <!-- Deep Slate -->
+      <stop offset="100%" stop-color="#3B82F6" /> <!-- Vibrant Blue -->
+    </linearGradient>
+
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" /> <!-- Gold -->
+      <stop offset="100%" stop-color="#EF4444" /> <!-- Crimson Accent -->
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Fully Transparent Canvas — Perfectly Centered Elements -->
+
+  <!-- ICON: Centered at X=400 -->
+  <g filter="url(#softShadow)" transform="translate(320, 15)">
+    <!-- Bag Outer Line -->
+    <path d="M45 40 L115 40 C140 40 150 50 150 75 L150 145 C150 170 140 180 115 180 L45 180 C20 180 10 170 10 145 L10 75 C10 50 20 40 45 40 Z" 
+          fill="none" 
+          stroke="url(#primaryGradient)" 
+          stroke-width="12" 
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+    
+    <!-- Bag Handle -->
+    <path d="M55 40 C55 5, 105 5, 105 40" 
+          fill="none" 
+          stroke="url(#accentGradient)" 
+          stroke-width="10" 
+          stroke-linecap="round"/>
+
+    <!-- Integrated Fabric/Clothing Motif -->
+    <path d="M22 125 C45 105 115 145 138 125 C138 145 115 155 22 125 Z" 
+          fill="url(#primaryGradient)" 
+          opacity="0.95"/>
+          
+    <!-- Dynamic Ribbon Detail -->
+    <path d="M12 75 C32 55, 128 95, 148 75" 
+          fill="none" 
+          stroke="url(#accentGradient)" 
+          stroke-width="4" 
+          stroke-dasharray="8 6"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- TYPOGRAPHY: Center-Aligned Text -->
+  <g text-anchor="middle">
+    <!-- Main Title: AJAY -->
+    <text x="400" y="230" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="48" 
+          font-weight="900" 
+          letter-spacing="14" 
+          fill="url(#primaryGradient)">
+      AJAY
+    </text>
+
+    <!-- Subtitle: SHOES & CLOTHING -->
+    <text x="400" y="260" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="14" 
+          font-weight="700" 
+          letter-spacing="8" 
+          fill="#64748B">
+      SHOES &amp; CLOTHING
+    </text>
+  </g>
+</svg>
