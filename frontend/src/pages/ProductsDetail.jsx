@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import RegisterContext from '../context/RegisterContext';
+
 import { useLoadingBar } from 'react-top-loading-bar';
 import { X } from 'lucide-react';
 import SearchContext from '../context/SearchContext';
@@ -13,7 +13,7 @@ import LoadingBar from '../utils/LoadingBar';
 
 function ProductsDetails(){
     // context to check whether the user is there or not
-    const {user, login, setUser, logout} = useContext(RegisterContext);
+   
     const {loggedUser, loggingFunction,logoutFunction, loadingLog}= useContext
     (AuthContext);
    
@@ -72,7 +72,7 @@ function ProductsDetails(){
         try {
             setLoading(true);
             start();
-            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); login(response.data); loggingFunction(response.data.user)});
+            const backendRes= await axios.post("http://localhost:4000/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); loggingFunction(response.data.user)});
             setLoading(false);
             complete();
             setAccount(false);

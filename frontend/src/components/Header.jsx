@@ -7,7 +7,7 @@ import axios from 'axios';
 import Skeleton from 'react-loading-skeleton';
 import { useLoadingBar } from "react-top-loading-bar";
 import ReactLoading from 'react-loading';
-import RegisterContext from '../context/registerContext';
+import RegisterContext from '../context/RegisterContext';
 import AuthContext from '../context/AuthContext';
 import Loading from '../utils/LoadingBar';
 import SearchContext from '../context/SearchContext';
