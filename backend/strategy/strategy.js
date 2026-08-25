@@ -5,8 +5,8 @@ import passport from "passport";
 passport.use(
   new GoogleStrategy(
     {
-      clientID: "259075562780-3tjrb7ebb26trcj60hclf52bkoi892d9.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientID: process.env.GOOGLE_CLIENT,
+      clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: "http://localhost:4000/auth/google/callback",
       scope: ["profile", "email"],   // ← Add email too
     },
