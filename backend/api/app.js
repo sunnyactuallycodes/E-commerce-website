@@ -4,7 +4,6 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
-import connectDB from '../config/connectDB.js';
 import passport from 'passport';
 
 // import for my routes only
@@ -14,6 +13,7 @@ import productRouter from '../routes/product.route.js';
 import cartRouter from '../routes/cart.routes.js';
 import orderRouter from '../routes/order.route.js';
 import paymentRouter from '../routes/payment.routes.js';
+import mongoose from 'mongoose';
 
 
 
@@ -34,6 +34,27 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(cookieParser());
 
+
+let isConnected = false;
+
+const connectDB = async () => {
+  if (isConnected) return;
+  try {
+    const db = await mongoose.connect(process.env.MONGO_URI);
+    isConnected = db.connections[0].readyState;
+    console.log("MongoDB Connected");
+  } catch (error) {
+    console.error("Database connection error:", error);
+  }
+};
+
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
+
+
+app.set('trust proxy', 1);
 
 app.use(session(
     {
@@ -66,26 +87,7 @@ app.use('/api/v1',paymentRouter);// routes for payment handling only through raz
 
 
 
-let isConnected = false;
 
-const connectDB = async () => {
-  if (isConnected) return;
-  try {
-    const db = await mongoose.connect("mongodb+srv://brajalbelaadmin_db_user:braj@clusterbrajalbela.chtnrfj.mongodb.net/?appName=clusterBrajAlbela");
-    isConnected = db.connections[0].readyState;
-    console.log("MongoDB Connected");
-  } catch (error) {
-    console.error("Database connection error:", error);
-  }
-};
-
-app.use(async (req, res, next) => {
-  await connectDB();
-  next();
-});
-
-
-app.set('trust proxy', 1);
 
 
 app.get('/confirmation', (request, response)=>{
