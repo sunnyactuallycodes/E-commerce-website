@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
   server:{
     proxy:{
-      '/api':"https://e-commerce-website-lac-eight.vercel.app"
+      '/':"https://e-commerce-website-lac-eight.vercel.app"
     }
   }
 });
