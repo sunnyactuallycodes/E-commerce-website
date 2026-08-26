@@ -893,7 +893,7 @@ function ProductsDetails(){
 
                  oneProductOnly.success && relatedProducts.map((product)=>(
                     <div key={product._id}>
-                     <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href(`/shop/${product._id}`)}>
+                     <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href=`/shop/${product._id}`}>
                     <div key={products.id} style={{
                         display:'flex',
                         flexDirection:'column',
@@ -950,7 +950,7 @@ function ProductsDetails(){
             {
                  oneProductOnly.success && products_all.data && relatedProducts.map((product)=>(
                       <div key={product._id}>
-                       <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href(`/shop/${product._id}`)}>
+                       <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href=`/shop/${product._id}`}>
                     <div style={{
                         display:'flex',
                         flexDirection:'column',
@@ -1007,7 +1007,7 @@ function ProductsDetails(){
             {
                  oneProductOnly.success && products_all.data && relatedProducts.map((product)=>(
                     <div key={product._id}>
-                    <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href(`/shop/${product._id}`)}>
+                    <NavLink to={`/shop/${product._id}`} onClick={()=>window.location.href=`/shop/${product._id}`}>
                     <div key={product.id} style={{
                         display:'flex',
                         flexDirection:'column',
