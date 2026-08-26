@@ -73,11 +73,11 @@ function ProductsDetails(){
             setLoading(true);
             start();
             const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true}).then((response)=>{setLoginMessage(response.data); loggingFunction(response.data.user)});
-            await loggingFunction(backendRes.data.user);
+            
             setLoading(false);
             complete();
             setAccount(false);
-            window.location.reload();
+          
            
         } catch (error) {
             console.error("An internal server error occured: ", error);
