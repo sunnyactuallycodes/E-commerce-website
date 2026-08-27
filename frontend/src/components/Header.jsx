@@ -31,6 +31,7 @@ function Header(){
    
     const {loggedUser, loggingFunction,logoutFunction, loadingLog}= useContext(AuthContext);
     
+    console.log(loggedUser);
 
    
     const location = useLocation();
@@ -114,8 +115,7 @@ function Header(){
             setLoading(true);
             start();
             const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true});
-            const response = await backendRes.data; 
-            if(response.success) await loggingFunction(response.user);
+            const response = await backendRes.data;
             console.log(response);
             setLoading(false);
             complete();
