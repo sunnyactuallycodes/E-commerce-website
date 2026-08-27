@@ -115,8 +115,8 @@ function Header(){
             start();
             const backendRes= await axios.post("https://e-commerce-website-lac-eight.vercel.app/api/v1/login",{phoneNumber, password}, {withCredentials:true});
             const response = await backendRes.data; 
-            await loggingFunction(response.user);
-            console.log("login successfull");
+            if(response.success) await loggingFunction(response.user);
+            console.log(response);
             setLoading(false);
             complete();
             setAccount(false);
