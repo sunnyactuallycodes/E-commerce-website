@@ -21,9 +21,9 @@ const AuthContextProvider= ({children})=>{
         checkingMe();
     },[]);
 
-    const loggingFunction = (userdata)=> setLoadingLog(userdata);
+    const loggingFunction = (userdata)=> setLoggedUser(userdata);
     const logoutFunction = async()=>{
-        await axios.get('http://localhost:4000/api/v1/logout',{withCredentials:true});
+        await axios.get('https://e-commerce-website-lac-eight.vercel.app/api/v1/logout',{withCredentials:true});
         setLoggedUser(null);
     };
     return(
