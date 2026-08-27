@@ -63,9 +63,10 @@ app.use(session(
         resave:false,
         cookie:{
             name:"user",
-            // value:"hey-Rakshita",
+            value:"hey-rakshita",
             maxAge:1000*60*60*24*14,
-            sameSite:'lax'
+            sameSite:'none',
+            secure:true
         },
         store:MongoStore.create({
             mongoUrl:process.env.MONGO_URI,
