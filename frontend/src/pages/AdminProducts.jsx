@@ -212,8 +212,8 @@ function AdminProducts(){
                             display:'flex',flexDirection:"column",gap:"5px",width:"50%"
                         }}>
                              <DynamicInputList
-                                    label="Product Details"
-                                    placeholder="e.g. 100% Cotton"
+                                    label="Sizes of product"
+                                    placeholder="e.g. M, 29, XL"
                                     items={productSize}
                                     setItems={setProductSize}
                                     />
